@@ -1,20 +1,18 @@
-#include <main.h>
+#include "main.h"
+#include <unistd.h>
 /**
  * main - a program that prints _putchar
  * Return: 0 (success)
  */
 int main(void)
 {
-	int _putchar;
+	char put[8] = "_putchar";
+	int a;
 
-	putchar('_');
-	putchar('p');
-	putchar('u');
-	putchar('t');
-	putchar('c');
-	putchar('h');
-	putchar('a');
-	putchar('r');
-	putchar('\n');
+	for (a = 0; a < 8; a++)
+	{
+		_putchar(put[a]);
+	}
+		_putchar('\n');
 	return (0);
 }
