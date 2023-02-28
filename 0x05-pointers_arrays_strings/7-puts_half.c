@@ -9,26 +9,26 @@
 void puts_half(char *str)
 
 {
-	int a = 0;
-	int b;
+	int j = 0;
+	int k;
 
-	while (str[a] != '\0')
+	while (str[j] != '\0')
 	{
-	a++;
+	j++;
 	}
-	if (a % 2 == 1)
+	if (j % 2 == 1)
 	{
-	b = (a - 1) / 2;
-	b += 1;
+	k = (j - 1) / 2;
+	k += 1;
 	}
 	else
 	{
-	a = b / 2;
+	k = j / 2;
 	}
 
-	for (; b < a; b++)
+	for (; k < j; k++)
 	{
-	_putchar(str[b]);
+	_putchar(str[k]);
 	}
 	_putchar('\n');
 }
