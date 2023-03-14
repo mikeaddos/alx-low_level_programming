@@ -23,7 +23,7 @@ char *_strdup(char *str)
 	if (strout == NULL)
 		return (NULL);
 
-	for (j = 0; n <= m; n++)
+	for (n = 0; n <= m; n++)
 		strout[n] = str[n];
 
 	return (strout);
