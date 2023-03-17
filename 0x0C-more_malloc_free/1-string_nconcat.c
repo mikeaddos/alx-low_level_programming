@@ -7,10 +7,11 @@
  * @n: index
  * Return: char pointer
  */
+
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	char *p;
-	unsigned int size1 = 0, size2 = 0, k;
+	char *sout;
+	unsigned int ls1, ls2, lsout, m;
 
 	if (s1 == NULL)
 		s1 = "";
@@ -18,33 +19,29 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	if (s2 == NULL)
 		s2 = "";
 
-	while (s1[size1] != '\0')
-	{
-		size1++;
-	}
+	for (ls1 = 0; s1[ls1] != '\0'; ls1++)
+		;
 
-	while (s2[size2] != '\0')
-	{
-		size2++;
-	}
+	for (ls2 = 0; s2[ls2] != '\0'; ls2++)
+		;
 
-	if (n > size2)
-	n = size2;
-	p = malloc((size1 + n + 1) * sizeof(char));
+	if (n > ls2)
+		n = ls2;
 
-	if (p == NULL)
-		return (0);
+	lsout = ls1 + n;
 
-	for (k = 0; k < size1; k++)
-	{
-		p[k] = s1[k];
-	}
+	sout = malloc(lsout + 1);
 
-	for (; k < (size1 + n); k++)
-	{
-		p[k] = s2[k - size1];
-	}
-	p[k] = '\0';
+	if (sout == NULL)
+		return (NULL);
 
-return (p);
+	for (m = 0; m < lsout; m++)
+		if (m < ls1)
+			sout[m] = s1[m];
+		else
+			sout[m] = s2[m - ls1];
+
+	sout[m] = '\0';
+
+	return (sout);
 }
