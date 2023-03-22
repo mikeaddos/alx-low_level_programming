@@ -1,14 +1,11 @@
 #include "3-calc.h"
-#include "3-calc.h"
-
 /**
- * main - check for code
- * @argc: argument count
- * @argv: argument vector
+ * main - check the code for ALX students.
+ * @argc: argument count.
+ * @argv: argument vector.
  *
- * Return: Always 0
+ * Return: Always 0.
  */
-
 int main(int argc, char *argv[])
 {
 	int a, b;
@@ -37,6 +34,6 @@ int main(int argc, char *argv[])
 	a = atoi(argv[1]);
 	b = atoi(argv[3]);
 
-	printf("%d\n", operation(m, n));
+	printf("%d\n", operation(a, b));
 	return (0);
 }
