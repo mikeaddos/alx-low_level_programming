@@ -10,35 +10,35 @@
 int delete_nodeint_at_index(listint_t **head, unsigned int index)
 {
 	unsigned int m;
-	listint_t *pr_node;
-	listint_t *cr_node;
+	listint_t *prnode;
+	listint_t *crnode;
 
-	pr_node = *head;
+	prnode = *head;
 
 	if (index != 0)
 	{
-		for (m = 0; m < index - 1 && prev != NULL; m++)
+		for (m = 0; m < index - 1 && prnode != NULL; m++)
 		{
-			pr_node = pr_node->cr_node;
+			prnode = prnode->crnode;
 		}
 	}
 
-	if (pr_node == NULL || (prev->cr_node == NULL && index != 0))
+	if (prnode == NULL || (prnode->crnode == NULL && index != 0))
 	{
 		return (-1);
 	}
 
-	cr_node = pr_node->cr_node;
+	crnode = prnode->crnode;
 
 	if (index != 0)
 	{
-		pr_node->cr_node = cr_node->cr_node;
-		free(cr_node);
+		prnode->crnode = crnode->crnode;
+		free(crnode);
 	}
 	else
 	{
-		free(pr_node);
-		*head = cr_node;
+		free(prnode);
+		*head = crnode;
 	}
 
 	return (1);
