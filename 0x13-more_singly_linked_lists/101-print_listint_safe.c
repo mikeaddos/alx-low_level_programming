@@ -32,7 +32,7 @@ void free_listp(listp_t **head)
 size_t print_listint_safe(const listint_t *head)
 {
 	size_t ncount = 0;
-	listp_t *nw_node, *add, *hptr;
+	listp_t *hptr, *nw_node, *add;
 
 	hptr = NULL;
 	while (head != NULL)
