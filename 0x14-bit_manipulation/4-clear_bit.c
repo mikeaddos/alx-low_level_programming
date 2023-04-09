@@ -7,10 +7,9 @@
  *
  * Return: 1 if it worked, or  -1 if an error occured
  */
-
 int clear_bit(unsigned long int *n, unsigned int index)
 {
-	u0nsigned int j;
+	unsigned int j;
 
 	if (index > 63)
 		return (-1);
