@@ -33,7 +33,7 @@ dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 		*head = curr;
 	}
 
-	currr->prev = h;
+	curr->prev = h;
 
 	return (curr);
 }
